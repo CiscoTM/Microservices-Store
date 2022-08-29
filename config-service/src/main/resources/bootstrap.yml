@@ -8,7 +8,8 @@ spring:
           uri: https://github.com/CiscoTM/Microservices-Store.git
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
-        bootstrap: true
+          search-paths: config-data
+  #        bootstrap: true
   security:
     user:
       name: root

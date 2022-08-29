@@ -1,31 +1,12 @@
-server:
-  port: 8093
-  error:
-    include-message: always
 spring:
-  h2:
-    console:
-      enabled: true
-  datasource:
-    url: jdbc:h2:mem:productDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.H2Dialect
-    properties:
-      hibernate:
-        show_sql: true
-        use_sql_comments: false
-        format_sql: false
-logging:
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+  application:
+    name: shopping-service
+  cloud:
+    config:
 
-
-
-#spring.config.import=optional:configserver: instead
-#spring.cloud.config.enabled=false
+      username: root
+      password: s3cr3t
+  #      enabled: true
+  #      uri: http://localhost:8081
+  config:
+    import: "optional:configserver:http://localhost:8081"
