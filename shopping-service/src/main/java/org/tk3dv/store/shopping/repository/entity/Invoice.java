@@ -2,6 +2,7 @@ package org.tk3dv.store.shopping.repository.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import org.tk3dv.store.shopping.model.Customer;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -37,6 +38,9 @@ public class Invoice {
     private List<InvoiceItem>items;
 
     private String state;
+
+    @Transient
+    private Customer customer;
 
     public Invoice(){items = new ArrayList<>();}
 
