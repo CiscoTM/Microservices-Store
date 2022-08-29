@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/CiscoTM/Microservices-Store.git
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+        bootstrap: true
+  security:
+    user:
+      name: root
+      password: s3cr3t
