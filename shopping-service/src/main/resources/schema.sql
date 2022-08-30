@@ -6,7 +6,7 @@ CREATE TABLE tbl_invoices
     description    VARCHAR(255),
     customer_id    BIGINT       NOT NULL,
     create_at      TIMESTAMP,
-    invoice_id        BIGINT NOT NULL ,
+    invoice_id        BIGINT ,
     state          VARCHAR(255)
 );
 

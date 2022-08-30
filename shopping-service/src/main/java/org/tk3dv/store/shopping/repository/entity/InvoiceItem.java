@@ -13,7 +13,6 @@ public class InvoiceItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_item")
     private Long id;
     @Positive(message = "El stock debe ser mayor que cero")
     private Double quantity;

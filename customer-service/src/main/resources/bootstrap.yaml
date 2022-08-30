@@ -12,8 +12,6 @@ spring:
     import: "optional:configserver:http://localhost:8081"
 
 eureka:
-  server:
-    wait-time-in-ms-when-sync-empty: 0
   instance:
     hostname: localhost
   client:

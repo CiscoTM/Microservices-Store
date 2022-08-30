@@ -5,8 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.tk3dv.store.shopping.model.Product;
 
-@FeignClient(name = "product-service", path = "localhost:8091")
-//@RequestMapping(value = "/products")
+@FeignClient(name = "PRODUCT-SERVICE")
 public interface ProductClient {
 
     @GetMapping(value = "/products/{id}")
