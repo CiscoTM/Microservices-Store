@@ -49,7 +49,7 @@ public class InvoiceServiceImpl implements InvoiceService {
         invoiceDB.getItems().forEach( items -> {
             productClient.updateStockProduct(
                     items.getProductId(),
-                    items.getQuantity()* -1
+                    items.getQuantity() * -1
             );
         });
         return invoiceDB;
