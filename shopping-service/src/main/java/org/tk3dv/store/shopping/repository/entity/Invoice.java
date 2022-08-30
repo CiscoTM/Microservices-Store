@@ -34,7 +34,7 @@ public class Invoice {
     @Valid
     @JsonIgnoreProperties({})
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "invoice_id")
+    @JoinColumn(name = "id_item")
     private List<InvoiceItem>items;
 
     private String state;

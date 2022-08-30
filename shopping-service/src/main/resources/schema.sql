@@ -6,16 +6,15 @@ CREATE TABLE tbl_invoices
     description    VARCHAR(255),
     customer_id    BIGINT       NOT NULL,
     create_at      TIMESTAMP,
-    invoice_id     BIGINT,
+    id_item        BIGINT NOT NULL ,
     state          VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS tbl_invoice_items;
 CREATE TABLE tbl_invoice_items
 (
-    id         BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id_item    BIGINT AUTO_INCREMENT PRIMARY KEY,
     quantity   DOUBLE,
     price      DOUBLE,
     product_id BIGINT NOT NULL,
-    subTotal   DOUBLE
 );
