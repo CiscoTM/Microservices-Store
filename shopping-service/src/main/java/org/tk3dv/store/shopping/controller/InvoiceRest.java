@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import org.tk3dv.store.shopping.model.Customer;
+import org.tk3dv.store.shopping.model.Region;
 import org.tk3dv.store.shopping.repository.entity.Invoice;
 import org.tk3dv.store.shopping.service.InvoiceService;
 
@@ -91,7 +93,21 @@ public class InvoiceRest {
     }
 
     private ResponseEntity<Invoice>fallbackSaveAll(@Valid @RequestBody Invoice invoice, BindingResult result, RuntimeException exception){
-        return new ResponseEntity("No tiene usuario, ni productos",HttpStatus.OK);
+        Customer customerFake = new Customer();
+        customerFake.setId(0L);
+        customerFake.setFirstName("John");
+        customerFake.setLastName("Doe");
+        customerFake.setEmail("1@a.c");
+        customerFake.setState("Far far away");
+        customerFake.setNumberId("555");
+        customerFake.setPhotoUrl("fake");
+        Region regionFake = new Region();
+        regionFake.setName("Fake");
+        regionFake.setId(0L);
+        customerFake.setRegion(regionFake);
+        invoice.setCustomer(customerFake);
+
+        return ResponseEntity.ok(invoice);
     }
 
 
