@@ -13,8 +13,8 @@ CREATE TABLE tbl_invoices
 DROP TABLE IF EXISTS tbl_invoice_items;
 CREATE TABLE tbl_invoice_items
 (
-    id_item    BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id    BIGINT AUTO_INCREMENT PRIMARY KEY,
     quantity   DOUBLE,
     price      DOUBLE,
-    product_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL
 );
