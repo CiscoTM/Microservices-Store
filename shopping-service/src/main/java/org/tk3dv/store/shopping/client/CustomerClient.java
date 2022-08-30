@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.tk3dv.store.shopping.model.Customer;
 
-@FeignClient(name = "customer-service", path = "http://localhost:8092")
+@FeignClient(name = "customer-service", path = "localhost:8092")
 //@RequestMapping("/customers")
 public interface CustomerClient {
 
