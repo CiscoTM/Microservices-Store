@@ -6,11 +6,10 @@ spring:
       server:
         git:
           uri: https://github.com/CiscoTM/Microservices-Store.git
+          default-label: gateway
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
           search-paths: config-data
-          default-label: circuit_breaker
-  #        bootstrap: true
   security:
     user:
       name: root

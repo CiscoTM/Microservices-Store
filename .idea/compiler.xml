@@ -12,11 +12,13 @@
         <module name="shopping-service" />
         <module name="customer-service" />
         <module name="registry-service" />
+        <module name="gateway-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="config-service" target="11" />
       <module name="customer-service" target="11" />
+      <module name="gateway-service" target="11" />
       <module name="product-service" target="11" />
       <module name="registry-service" target="11" />
       <module name="shopping-service" target="11" />
@@ -26,6 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-service" options="-parameters" />
       <module name="customer-service" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
       <module name="registry-service" options="-parameters" />
       <module name="shopping-service" options="-parameters" />

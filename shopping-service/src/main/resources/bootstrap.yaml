@@ -1,12 +1,10 @@
 spring:
   application:
-    name: customer-service
+    name: shopping-service
   cloud:
     config:
       username: root
       password: s3cr3t
-#      enabled: true
-#      uri: http://localhost:8081
   config:
     import: "optional:configserver:http://localhost:8081"
 
@@ -18,6 +16,3 @@ spring:
 #    fetch-registry: true
 #    service-url:
 #      default-zone: http://localhost:8761/eureka
-
-
-
