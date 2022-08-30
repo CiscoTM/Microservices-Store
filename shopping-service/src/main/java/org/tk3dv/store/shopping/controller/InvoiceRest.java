@@ -2,6 +2,7 @@ package org.tk3dv.store.shopping.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,6 +36,7 @@ public class InvoiceRest {
         return ResponseEntity.ok(invoices);
     }
 
+    @CircuitBreaker(name = "allCB", fallbackMethod = "fallbackGetAll")
     @GetMapping(value = "/{id}")
     public ResponseEntity<Invoice>getInvoice(@PathVariable("id") Long id){
         log.info("Fetching Invoice with id {}", id);
@@ -45,7 +47,7 @@ public class InvoiceRest {
         }
         return ResponseEntity.ok(invoice);
     }
-
+    @CircuitBreaker(name = "allCB", fallbackMethod = "fallbackSaveAll")
     @PostMapping
     public ResponseEntity<Invoice>createInvoice(@Valid @RequestBody Invoice invoice,
                                                 BindingResult result)
@@ -84,6 +86,13 @@ public class InvoiceRest {
         return ResponseEntity.ok(invoice);
     }
 
+    private ResponseEntity<Invoice>fallbackGetAll(@PathVariable("id") Long id, RuntimeException exception){
+        return new ResponseEntity("No tiene usuario, ni productos",HttpStatus.OK);
+    }
+
+    private ResponseEntity<Invoice>fallbackSaveAll(@Valid @RequestBody Invoice invoice, BindingResult result, RuntimeException exception){
+        return new ResponseEntity("No tiene usuario, ni productos",HttpStatus.OK);
+    }
 
 
 

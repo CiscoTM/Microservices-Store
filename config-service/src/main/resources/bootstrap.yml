@@ -9,7 +9,7 @@ spring:
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
           search-paths: config-data
-          default-label: feign
+          default-label: circuit_breaker
   #        bootstrap: true
   security:
     user:
