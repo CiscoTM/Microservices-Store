@@ -1,6 +1,6 @@
 spring:
   application:
-    name: shopping-service
+    name: service
   cloud:
     config:
       username: root
