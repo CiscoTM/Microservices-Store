@@ -9,11 +9,7 @@ spring:
 #      uri: http://localhost:8081
   config:
     import: "optional:configserver:http://localhost:8081"
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
+
 
 #eureka:
 #  instance:
