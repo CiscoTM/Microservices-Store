@@ -10,6 +10,10 @@ spring:
   #      uri: http://localhost:8081
   config:
     import: "optional:configserver:http://localhost:8081"
+  boot:
+    admin:
+      client:
+        url: 8086
 
 #eureka:
 #  instance:
