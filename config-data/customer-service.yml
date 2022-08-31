@@ -1,5 +1,5 @@
 server:
-  port: 0 #8092
+  port: 8092
   error:
     include-message: always
 spring:

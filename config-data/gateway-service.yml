@@ -18,15 +18,15 @@ spring:
           enabled: true
       routes:
         - id: customer-service
-          uri: lb://customer
+          uri: lb://customer-service
           predicates:
-            - Path=/**
+            - Path=/customers/**
         - id: product-service
-          uri: lb://product
+          uri: lb://product-service
           predicates:
             - Path=/products/**
         - id: shopping-service
-          uri: lb://shopping
+          uri: lb://shopping-service
           predicates:
             - Path=/invoices/**
   	    
