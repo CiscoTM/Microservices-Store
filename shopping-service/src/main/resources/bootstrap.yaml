@@ -10,7 +10,7 @@ spring:
   boot:
     admin:
       client:
-        url: 8086
+        url: http://localhost:8086
 
 
 #eureka:
