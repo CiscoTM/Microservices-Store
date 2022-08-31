@@ -2,8 +2,27 @@ spring:
   application:
     name: gateway-service
   cloud:
-    config:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customers/**
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/products/**
+        - id: shopping-service
+          uri: lb://shopping-service
+          predicates:
+            - Path=/invoices/**
+      config:
       username: root
       password: s3cr3t
   config:
     import: "optional:configserver:http://localhost:8081"
+server:
+  port: 8060
