@@ -34,8 +34,8 @@ eureka:
   instance:
     hostname: localhost
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
