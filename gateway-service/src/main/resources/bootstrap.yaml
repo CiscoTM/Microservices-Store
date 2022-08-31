@@ -7,8 +7,8 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: CUSTOMER-SERVICE
-          uri: lb://CUSTOMER-SERVICE
+        - id: customer-service
+          uri: lb://customer-service
           predicates:
             - Path=/customers/**
         - id: product-service
