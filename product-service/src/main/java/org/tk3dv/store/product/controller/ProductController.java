@@ -8,8 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import org.tk3dv.store.product.entity.Category;
-import org.tk3dv.store.product.entity.Product;
+import org.tk3dv.store.product.entity.*;
 import org.tk3dv.store.product.service.ProductService;
 
 import javax.validation.Valid;
@@ -44,7 +43,7 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
-    @GetMapping(value = "/{id}")
+        @GetMapping(value = "/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable("id") Long id){
         Product product = service.getProduct(id);
         if(product == null){
