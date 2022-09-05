@@ -1,3 +1,6 @@
+server:
+  port: 8060
+
 spring:
   application:
     name: gateway-service
@@ -8,21 +11,21 @@ spring:
           enabled: true
       routes:
         - id: customer-service
-          uri: lb://customer-service
+          uri: lb://CUSTOMER-SERVICE
           predicates:
             - Path=/customers/**
         - id: product-service
-          uri: lb://product-service
+          uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/products/**
         - id: shopping-service
-          uri: lb://shopping-service
+          uri: lb://SHOPPING-SERVICE
           predicates:
             - Path=/invoices/**
       config:
       username: root
       password: s3cr3t
+
   config:
     import: "optional:configserver:http://localhost:8081"
-server:
-  port: 8060
+
